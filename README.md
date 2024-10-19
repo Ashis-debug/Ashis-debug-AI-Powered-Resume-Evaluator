@@ -1,3 +1,4 @@
+
 ### README.md
 
 
@@ -11,33 +12,14 @@ This project is a Flask-based API that uses AI to evaluate the suitability of a 
 - Extracts and compares job description details with the candidate's information.
 - Provides an AI-based evaluation with insights on work experience, skills match, and location.
 - Returns an overall match percentage along with other evaluation metrics.
-  
+
 ## Technologies Used
 
-- Python 3.12.4
-- Flask
-- Google Gemini AI
-- Poppler-utils (for PDF processing)
-- Docker
-
-## Project Structure
-
-```bash
-AI-Powered-Resume-Evaluator/
-├── app/
-│   ├── __init__.py                 # Initializes the Flask app
-│   ├── routes.py                   # Contains the API route for evaluation
-│   ├── utils/
-│   │   ├── pdf_converter.py        # Converts PDFs to images
-│   │   ├── text_creator.py         # Generates text for job and candidate details
-│   │   ├── gemini_integration.py   # Handles integration with Google Gemini AI
-│   │   ├── response_cleaner.py     # Cleans and formats the AI response
-│   └── config.py                   # Configuration for API keys and services
-├── run.py                          # Entry point to start the Flask app
-├── Dockerfile                      # Docker configuration
-├── requirements.txt                # Python dependencies
-└── README.md                       # This file
-```
+- [Python 3.12.4](https://www.python.org/downloads/)
+- [Flask](https://flask.palletsprojects.com/)
+- [Google Gemini AI](https://cloud.google.com/gemini/docs/)
+- [Poppler-utils](https://poppler.freedesktop.org/) (for PDF processing)
+- [Docker](https://www.docker.com/)
 
 ## API Endpoints
 
@@ -47,7 +29,6 @@ This endpoint accepts a job description and candidate details (including a resum
 
 #### Request Example
 
-```json
 {
     "jobDescription": {
         "job_name": "Web Developer",
@@ -75,11 +56,9 @@ This endpoint accepts a job description and candidate details (including a resum
         "notice_period": "30"
     }
 }
-```
+
 
 #### Response Example
-
-```json
 {
     "evaluation": {
         "Overall Match Percentage": "80%",
@@ -91,7 +70,6 @@ This endpoint accepts a job description and candidate details (including a resum
         "Reason": "The candidate has relevant skills and experience matching the job description."
     }
 }
-```
 
 ## Running the Project Locally
 
@@ -104,28 +82,22 @@ This endpoint accepts a job description and candidate details (including a resum
 
 1. **Clone the repository**:
 
-   ```bash
-   git clone https://github.com/your-repo/AI-Powered-Resume-Evaluator.git
+   git clone https://github.com/Ashis-debug/Ashis-debug-AI-Powered-Resume-Evaluator.git
    cd AI-Powered-Resume-Evaluator
-   ```
 
 2. **Install the required dependencies**:
 
    Create and activate a virtual environment, then install the dependencies:
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   
+   python3 -m venv .venv
+   source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
    pip install -r requirements.txt
-   ```
 
-3. **Run the Flask application**:
+4. **Run the Flask application**:
 
-   ```bash
    python run.py
-   ```
 
-4. **Access the API**:
+5. **Access the API**:
 
    The API will be running at `http://127.0.0.1:5000/`. You can use tools like Postman or `curl` to interact with it.
 
@@ -133,15 +105,11 @@ This endpoint accepts a job description and candidate details (including a resum
 
 1. **Build the Docker image**:
 
-   ```bash
    docker build -t ai-powered-resume-evaluator .
-   ```
 
 2. **Run the Docker container**:
 
-   ```bash
    docker run -d -p 5000:5000 ai-powered-resume-evaluator
-   ```
 
 3. **Access the API**:
 
@@ -151,7 +119,6 @@ This endpoint accepts a job description and candidate details (including a resum
 
 ### Input (JSON):
 
-```json
 {
     "jobDescription": {
         "job_name": "Web Developer",
@@ -167,11 +134,9 @@ This endpoint accepts a job description and candidate details (including a resum
         "resume": "https://example.com/path/to/resume.pdf"
     }
 }
-```
 
 ### Output (JSON):
 
-```json
 {
     "evaluation": {
         "Overall Match Percentage": "80%",
@@ -182,7 +147,8 @@ This endpoint accepts a job description and candidate details (including a resum
         "Reason": "The candidate has relevant skills and experience matching the job description."
     }
 }
-```
 
 ## License
+
+This project is licensed under the MIT License
 
